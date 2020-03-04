@@ -44,31 +44,31 @@ system. These will also be discussed at the end of the README.  
 
 |*Specifically for buxton2:*
 |base_paths.conf, model configuration file, MET tool configuration file,
-time configuration file, optional regridding file(s), optional ensemble
-mean precipitation file
-
+|time configuration file, optional regridding file(s), optional ensemble
+|mean precipitation file
+|
 |*Specifically for bigbang2:*
 |bigbang.conf, base_paths.conf , time configuration file, model
-configuration file, MET tool configuration file, time configuration
-file, optional regridding file(s), optional ensemble mean precipitation
-file
-
+|configuration file, MET tool configuration file, time configuration
+|file, optional regridding file(s), optional ensemble mean precipitation
+|file
+|
 |*Base Configuration files:*
 |bigbang.conf
 |base_paths.conf
-
-*Model Configuration files:*
-HREFv2_apcp3.conf
-HREFv2_apcp24.conf
-HREFv2_ens.conf
-HREFv2.conf
-HRRRe_apcp3.conf
-HRRRe_apcp24.conf
-HRRRe_ens.conf
-HRRRe.conf
-HRRRv3.conf
-HRRRv4.conf
-NSSLFV3.conf
+|
+|*Model Configuration files:*
+|HREFv2_apcp3.conf
+|HREFv2_apcp24.conf
+|HREFv2_ens.conf
+|HREFv2.conf
+|HRRRe_apcp3.conf
+|HRRRe_apcp24.conf
+|HRRRe_ens.conf
+|HRRRe.conf
+|HRRRv3.conf
+|HRRRv4.conf
+|NSSLFV3.conf
 
 *MET tool configuration files:*
 ens_stat.conf
