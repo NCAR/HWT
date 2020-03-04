@@ -97,10 +97,9 @@ __________________________________
 | *Ensemble Mean Precipitation Files (only needed when running ensemble mean precipitation):*
 | ens_mean_apcp24.conf
 | ens_mean_apcp3.conf
-
-*System configuration files:*
-
-There are a few configuration files that are not specific to HWT, but
+| 
+| *System configuration files:*
+| There are a few configuration files that are not specific to HWT, but
 still can be edited.  They are currently set up to run on buxton2 and
 bigbang2. However, they may need to be edited if METplus is run from a
 different machine.  They are listed here, with the relative path. 
@@ -382,26 +381,19 @@ The full versions and time each job was run can be found in the files
 crontab.tina and crontab.tina.bigbang.
 
 **Buxton2**
-
-*Point Observations, temperature, dew point, and wind speed converted to
+| *Point Observations, temperature, dew point, and wind speed converted to
 netCDF:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c pb2nc.conf -c time_valid_hrly.conf
-
-*Surrogate Severe grid_stat:*
-
-/usr/local/Python2.7.11/bin/python run_met_surrogate_severe_perc.py
-
-*Surrogate Severe stat_analysis:*
-
-/usr/local/Python2.7.11/bin/python run_stat_analysis_surrogate_severe.py
-
-*HREFv2 data*
-
-*Combining ensemble member precipitation to 3 hourly and 24 hourly:*
-
-/usr/local/Python2.7.11/bin/python run_pcp_href.py
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c pb2nc.conf -c time_valid_hrly.conf
+| 
+| *Surrogate Severe grid_stat:*
+| /usr/local/Python2.7.11/bin/python run_met_surrogate_severe_perc.py
+| 
+| *Surrogate Severe stat_analysis:*
+| /usr/local/Python2.7.11/bin/python run_stat_analysis_surrogate_severe.py
+| 
+| *HREFv2 data*
+| *Combining ensemble member precipitation to 3 hourly and 24 hourly:*
+| /usr/local/Python2.7.11/bin/python run_pcp_href.py
 
 *Ensemble mean temperature, dew point, and wind speed with
 ensemble_stat:*
