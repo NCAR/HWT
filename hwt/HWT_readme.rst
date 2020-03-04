@@ -29,6 +29,7 @@ in the README.  In addition, three scripts were run outside the METplus
 system. These will also be discussed at the end of the README.  
 
 **How to Run METplus**
+======================
 
 1. Edit the system configuration files
 
@@ -150,6 +151,7 @@ system functions such as rm, cut, wgrib2, nco tools, etc.
 ======================================================================
 
 **MET programs:**
+_________________
 
 ensemble_stat:  used to create ensemble means for temperature, dew
 point, wind speed, and precipitation
@@ -404,7 +406,8 @@ grid_stat for the surrogate severe data, and accumulates using
 stat_analysis, so the data is in a format for Brett to display on the
 webpage
 
-**Statistics cron jobs in 2019**  
+**Statistics cron jobs in 2019**
+================================
 
 These are shortened examples; the full paths are omitted for clarity. 
 The full versions and time each job was run can be found in the files
@@ -652,6 +655,7 @@ HRRRv4.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c
 nsslfv3_regrid.conf
 
 **Creating Scorecards**
+=======================
 
 Scorecards are created by running METviewer in a container.  The output
 from MET tools is first added to a METviewer database, and then
@@ -703,7 +707,8 @@ scorecard_cam_2019_ss_href_hrrre_cluegrid.xml:  HREFv2 versus HRRRe
 thresh_sigdiff.xml:  Contains the color and symbol settings, as well as
 significance thresholds
 
-**Scorecard cron jobs in 2019**  
+**Scorecard cron jobs in 2019**
+===============================
 
 The full versions and time each job was run can be found in the files
 /home/hank.fisher/cron/crontab.
