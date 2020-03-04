@@ -380,7 +380,8 @@ These are shortened examples; the full paths are omitted for clarity. 
 The full versions and time each job was run can be found in the files
 crontab.tina and crontab.tina.bigbang.
 
-| **Buxton2**
+**Buxton2**
+___________
 | *Point Observations, temperature, dew point, and wind speed converted to netCDF:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c pb2nc.conf -c time_valid_hrly.conf
 | 
