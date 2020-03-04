@@ -1,19 +1,9 @@
 **System Description**
 ======================
 
-Verification and scorecards during the HWT 2018 and HWT 2019 Spring
-Experiments were run mostly using the METplus system.  The METplus
-system is a set of python wrappers that run different programs from the
-Model Evaluation Tools package. All Metplus files are stored in the
-METplus directory currently located in /home/christina.kalb/METplus
+Verification and scorecards during the HWT 2018 and HWT 2019 Spring Experiments were run mostly using the METplus system.  The METplus system is a set of python wrappers that run different programs from the Model Evaluation Tools package. All Metplus files are stored in the METplus directory currently located in /home/christina.kalb/METplus
 
-The system is configured such that multiple configuration files are
-linked to get the desired output.  The reasoning for this is to avoid
-having the same configuration parameter appear in multiple files. The
-exceptions are the multiple time configuration files.  As different time
-steps and start/end times were needed for the hourly data, 3 hourly
-precipitation, and 24 hour precipitation accumulations, the start and
-end times appear multiple times in these files.  
+The system is configured such that multiple configuration files are linked to get the desired output.  The reasoning for this is to avoid having the same configuration parameter appear in multiple files. The exceptions are the multiple time configuration files.  As different time steps and start/end times were needed for the hourly data, 3 hourly precipitation, and 24 hour precipitation accumulations, the start and end times appear multiple times in these files.  
 
 The order in which configuration files are listed is important for the 3
 hourly and 24 hourly accumulated precipitation.  In all other cases, the
