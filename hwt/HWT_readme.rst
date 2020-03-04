@@ -172,7 +172,7 @@ observation data, specifically RMSE and ME during HWT 2019
 stat_analysis:  used to combine statistics from multiple days
 
 **Configuration Files (alphabetical order):**
----------------------------------------------
+_____________________________________________
 
 This section contains information about the different METplus
 configuration files that were used during HWT 2019.  Not all variables
@@ -373,6 +373,7 @@ created prior to the arrival of observations, allowing these to be run
 outside the time when the majority of the verification was processing.
 
 **Scripts Outside of METplus**
+______________________________
 
 These scripts are currently located in
 /home/christina.kalb/python_separates
@@ -663,7 +664,18 @@ scorecards are run on this database.  Both of these processes are
 launched from a container. The files associated with creating scorecards
 are located in /raid/efp/se2019/ftp/dtc/metviewer.
 
-\*Hank: add details of how to turn on the container here
+viewer_config:
+--------------
+
+  Automated scorecard images were created using METviewer running continuously inside a container and having cron entries send command line requests to the container.
+- container_config
+   docker-compose.yml is the yml file used to set up the HWT docker instance
+
+   docker.sh is the shell script calling docker compose and giving an example of the metviewer commands to create the scorecards
+- db_load
+   a series of xml files used to load individual databases
+- scorecards
+   xml files to create different HWT scorecards
 
 To load data into the METviewer database, run one of the load shell
 scripts which are described below.  The shell scripts reference
