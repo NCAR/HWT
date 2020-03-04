@@ -421,38 +421,26 @@ ___________
 | 
 | **HRRRv3 data**
 | *Reflectivity grid_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf
-
-*Environment point_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c point_stat.conf -c time_valid_hrly.conf
-
-*Reflectivity grid_stat regridded to the CLUE grid:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf -c
-nsslfv3_regrid.conf
-
-*Environment point_stat regridded to the CLUE grid:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c point_stat.conf -c time_valid_hrly.conf -c
-nsslfv3_regrid.conf
-
-*24 hour precipitation grid_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c pcp_combine_grid_stat.conf -c time_valid_24hrly.conf
-
-*3 hour precipitation grid_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
-
-*24 hour precipitation grid_stat regridded to the CLUE grid:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf
+| 
+| *Environment point_stat:*
+| 
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c point_stat.conf -c time_valid_hrly.conf
+| 
+| *Reflectivity grid_stat regridded to the CLUE grid:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf -c nsslfv3_regrid.conf
+|
+| *Environment point_stat regridded to the CLUE grid:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c point_stat.conf -c time_valid_hrly.conf -c nsslfv3_regrid.conf
+| 
+| *24 hour precipitation grid_stat:*
+| 
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c pcp_combine_grid_stat.conf -c time_valid_24hrly.conf
+| 
+| *3 hour precipitation grid_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
+| 
+| *24 hour precipitation grid_stat regridded to the CLUE grid:*
 
 /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
 -c HRRRv3.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c
