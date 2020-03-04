@@ -344,15 +344,9 @@ ______________________________
 These scripts are currently located in
 /home/christina.kalb/python_separates
 
-create_met_poly.py:  Takes a json file containing the sector bounds for
-the daily domain and converts it to a MET poly file which can then be
-run through gen_vx_mask to create a masking file for the daily domain.
+create_met_poly.py:  Takes a json file containing the sector bounds for the daily domain and converts it to a MET poly file which can then be run through gen_vx_mask to create a masking file for the daily domain.
 
-run_met_surrogate_severe_perc.py:  Runs the surrogate severe files
-created by Burkely through grid_stat twice.  The first run creates CSI
-and bias, and the second computes probability statistics such as ROC and
-Reliability.  This program also calls create_met_poly.py to create a
-masking region for the surrogate severe data.
+run_met_surrogate_severe_perc.py:  Runs the surrogate severe files created by Burkely through grid_stat twice.  The first run creates CSI and bias, and the second computes probability statistics such as ROC and Reliability.  This program also calls create_met_poly.py to create a masking region for the surrogate severe data.
 
 run_pcp_href.py:  Converts each member of the HREFv2 ensemble from
 hourly precipitation to 3 hourly and 24 hourly.
@@ -376,9 +370,7 @@ webpage
 **Statistics cron jobs in 2019**
 ================================
 
-These are shortened examples; the full paths are omitted for clarity. 
-The full versions and time each job was run can be found in the files
-crontab.tina and crontab.tina.bigbang.
+These are shortened examples; the full paths are omitted for clarity. The full versions and time each job was run can be found in the files crontab.tina and crontab.tina.bigbang.
 
 Buxton2
 ___________
@@ -465,7 +457,7 @@ ____________
 | *Reflectivity stat_analysis:*
 | /bin/python run_stat_analysis_refc_hrrrv3_hrrrv4_nsslfv3.py
 | 
-| *HRRRe data*
+| **HRRRe data**
 | *Ensemble mean temperature, dew point, and wind speed with ensemble_stat:*
 | /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe_ens.conf -c ens_stat.conf -c time_init_ens.conf 
 | 
@@ -520,7 +512,7 @@ ____________
 
 Scorecards are created by running METviewer in a container.  The output from MET tools is first added to a METviewer database, and then scorecards are run on this database.  Both of these processes are launched from a container. The files associated with creating scorecards are located in /raid/efp/se2019/ftp/dtc/metviewer.
 
-Automated scorecard images were created using METviewer running continuously inside a container and having cron entries send command line requests to the container.  docker-compose.yml is the yml file used to set up the HWT docker instance and docker.sh is the shell script calling docker compose and giving an example of the metviewer commands to create the scorecards
+Automated scorecard images were created using METviewer running continuously inside a container and having cron entries send command line requests to the container.  The container only runs on bigbang2, and docker-compose.yml is the yml file used to set up the HWT docker instance.  The file docker.sh is the shell script calling docker compose and giving an example of the metviewer commands to create the scorecards
 
 To load data into the METviewer database, run one of the load shell scripts which are described below.  The shell scripts reference parameter files that list the data to be loaded into the database. Scorecards are run by calling mv_scorecard.sh followed by an xml file that contains the models and variables to display on the scorecard.  The color and symbol settings, as well as significance thresholds are located in the xml file, thresh_sigdiff.xml.
 
@@ -549,31 +541,20 @@ To load data into the METviewer database, run one of the load shell scripts whic
 The full versions and time each job was run can be found in the files
 /home/hank.fisher/cron/crontab.
 
-*Run Tues - Saturday at 11am*
-
-*Add HRRRv3 and HRRRv4* *to the database*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"/raid/efp/se2019/ftp/dtc/metviewer/scripts/add_mv_hwt_2019.sh"
-
-*Run HRRRv3/HRRRv4 Surrogate Severe Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_hrrrv3_hrrrv4.xml"
-
-*Run HRRRv3/HRRRv4 Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_hrrrv3_hrrrv4.xml"
-
-*Run Friday at 11am*
-
-*Reload all the data*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"/raid/efp/se2019/ftp/dtc/metviewer/scripts/load_mv_hwt_2019.sh"
+| **Run Tues - Saturday at 11am**
+| *Add HRRRv3 and HRRRv4* *to the database*
+|
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "/raid/efp/se2019/ftp/dtc/metviewer/scripts/add_mv_hwt_2019.sh"
+| 
+| *Run HRRRv3/HRRRv4 Surrogate Severe Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_hrrrv3_hrrrv4.xml"
+| 
+| *Run HRRRv3/HRRRv4 Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_hrrrv3_hrrrv4.xml"
+| 
+| **Run Friday at 11am**
+| *Reload all the data*
+|  /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "/raid/efp/se2019/ftp/dtc/metviewer/scripts/load_mv_hwt_2019.sh"
 
 *Run NSSL-FV3 versus HRRRv3 Scorecard*
 
