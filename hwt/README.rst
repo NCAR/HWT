@@ -5,32 +5,20 @@ Verification and scorecards during the HWT 2018 and HWT 2019 Spring Experiments 
 
 The system is configured such that multiple configuration files are linked to get the desired output.  The reasoning for this is to avoid having the same configuration parameter appear in multiple files. The exceptions are the multiple time configuration files.  As different time steps and start/end times were needed for the hourly data, 3 hourly precipitation, and 24 hour precipitation accumulations, the start and end times appear multiple times in these files.  
 
-The order in which configuration files are listed is important for the 3
-hourly and 24 hourly accumulated precipitation.  In all other cases, the
-order is irrelevant. However, to avoid issues, it’s easiest to follow
-the order of configuration files listed here:
+The order in which configuration files are listed is important for the 3 hourly and 24 hourly accumulated precipitation.  In all other cases, the order is irrelevant. However, to avoid issues, it’s easiest to follow the order of configuration files listed here:
 
 Base Configuration file(s) , model configuration file, MET tool
 configuration file, time configuration file, optional regridding
 file(s), optional ensemble mean precipitation file
 
-The different MET tools and configuration files used are described later
-in the README.  In addition, three scripts were run outside the METplus
-system. These will also be discussed at the end of the README.  
+The different MET tools and configuration files used are described later in the README.  In addition, three scripts were run outside the METplus system. These will also be discussed at the end of the README.  
 
 **How to Run METplus**
 ======================
 
 1. Edit the system configuration files
-
 2. cd to the the METplus/ush directory
-
-3. python (must be version 2.7 or higher) master_metplus.py -c
-   configuration file 1 -c configuration file 2 -c configuration file 3
-   etc…  The location of an nco executable required by the METplus
-   system was different on bigbang2 and buxton2 during HWT 2019.
-   Therefore, running on bigbang2 required the use of an additional
-   parameter file to specify this different location.
+3. python (must be version 2.7 or higher) master_metplus.py -c configuration file 1 -c configuration file 2 -c configuration file 3 etc…  The location of an nco executable required by the METplus system was different on bigbang2 and buxton2 during HWT 2019.  Therefore, running on bigbang2 required the use of an additional    parameter file to specify this different location.
 
 | *Specifically for buxton2:*
 | base_paths.conf, model configuration file, MET tool configuration file,
@@ -45,8 +33,7 @@ file
 
 **Configuration File Categories:**
 __________________________________
-*Base Configuration Files:*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+| *Base Configuration Files:*
 | bigbang.conf
 | base_paths.conf
 | 
