@@ -42,17 +42,17 @@ system. These will also be discussed at the end of the README.  
    Therefore, running on bigbang2 required the use of an additional
    parameter file to specify this different location.
 
-*Specifically for buxton2:*
-base_paths.conf, model configuration file, MET tool configuration file,
+| *Specifically for buxton2:*
+| base_paths.conf, model configuration file, MET tool configuration file,
 time configuration file, optional regridding file(s), optional ensemble
 mean precipitation file
-
-*Specifically for bigbang2:*
-bigbang.conf, base_paths.conf , time configuration file, model
+| 
+| *Specifically for bigbang2:*
+| bigbang.conf, base_paths.conf , time configuration file, model
 configuration file, MET tool configuration file, time configuration
 file, optional regridding file(s), optional ensemble mean precipitation
 file
-
+| 
 | *Base Configuration files:*
 | bigbang.conf
 | base_paths.conf
@@ -98,7 +98,7 @@ mean precipitation):*
 | ens_mean_apcp24.conf
 | ens_mean_apcp3.conf
 |
-*System configuration files:*
+| *System configuration files:*
 
 There are a few configuration files that are not specific to HWT, but
 still can be edited.  They are currently set up to run on buxton2 and
