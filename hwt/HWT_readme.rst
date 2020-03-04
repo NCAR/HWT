@@ -424,7 +424,6 @@ ___________
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf
 | 
 | *Environment point_stat:*
-| 
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c point_stat.conf -c time_valid_hrly.conf
 | 
 | *Reflectivity grid_stat regridded to the CLUE grid:*
@@ -458,26 +457,18 @@ ___________
 | *3 hour precipitation grid_stat:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c NSSLfv3.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
 
-**Bigbang2**
+Bigbang2
 ____________
-
-*Combining observed ST4 hourly precipitation to 3 and 24 with
-pcp_combine:*
-
-/bin/python run_pcp_obs.py
-
-*Reflectivity stat_analysis:*
-
-/bin/python run_stat_analysis_refc_hrrrv3_hrrrv4_nsslfv3.py
-
-*HRRRe data*
-
-*Ensemble mean temperature, dew point, and wind speed with
-ensemble_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRe_ens.conf -c ens_stat.conf -c time_init_ens.conf 
-
+*Combining observed ST4 hourly precipitation to 3 and 24 with pcp_combine:*
+| /bin/python run_pcp_obs.py
+| 
+| *Reflectivity stat_analysis:*
+| /bin/python run_stat_analysis_refc_hrrrv3_hrrrv4_nsslfv3.py
+| 
+| *HRRRe data*
+| *Ensemble mean temperature, dew point, and wind speed with ensemble_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe_ens.conf -c ens_stat.conf -c time_init_ens.conf 
+| 
 *Combining ensemble member precipitation to 3 hourly and 24 hourly:*
 
 /bin/python run_pcp_hrrre.py
