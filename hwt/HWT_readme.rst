@@ -380,7 +380,7 @@ These are shortened examples; the full paths are omitted for clarity. 
 The full versions and time each job was run can be found in the files
 crontab.tina and crontab.tina.bigbang.
 
-**Buxton2**
+Buxton2
 ___________
 | *Point Observations, temperature, dew point, and wind speed converted to netCDF:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c pb2nc.conf -c time_valid_hrly.conf
@@ -401,7 +401,7 @@ ___________
 | *24 hour Precipitation (0000 initialization time) ensemble mean with ensemble_stat:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c /HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_00.conf
 | 
-*24 hour Precipitation (1200 initialization time) ensemble mean with ensemble_stat:*
+| *24 hour Precipitation (1200 initialization time) ensemble mean with ensemble_stat:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_12.conf
 | 
 | *3 hour Precipitation ensemble mean with ensemble_stat:*
@@ -434,47 +434,32 @@ ___________
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c point_stat.conf -c time_valid_hrly.conf -c nsslfv3_regrid.conf
 | 
 | *24 hour precipitation grid_stat:*
-| 
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c pcp_combine_grid_stat.conf -c time_valid_24hrly.conf
 | 
 | *3 hour precipitation grid_stat:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
 | 
 | *24 hour precipitation grid_stat regridded to the CLUE grid:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c
-nsslfv3_regrid.conf
-
-*3 hour precipitation grid_stat regridded to the CLUE grid:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HRRRv3.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c
-nsslfv3_regrid.conf
-
-*NSSL-FV3 data*
-
-*Reflectivity grid_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c NSSLfv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf
-
-*Environment point_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c NSSLfv3.conf -c point_stat.conf -c time_valid_hrly.conf
-
-*24 hour precipitation grid_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c NSSLfv3.conf -c pcp_combine_grid_stat.conf -c time_valid_24hrly.conf
-
-*3 hour precipitation grid_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c NSSLfv3.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c nsslfv3_regrid.conf
+| 
+| *3 hour precipitation grid_stat regridded to the CLUE grid:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HRRRv3.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c nsslfv3_regrid.conf
+| 
+| **NSSL-FV3 data**
+| *Reflectivity grid_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c NSSLfv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf
+| 
+| *Environment point_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c NSSLfv3.conf -c point_stat.conf -c time_valid_hrly.conf
+| 
+| *24 hour precipitation grid_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c NSSLfv3.conf -c pcp_combine_grid_stat.conf -c time_valid_24hrly.conf
+| 
+| *3 hour precipitation grid_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c NSSLfv3.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
 
 **Bigbang2**
+____________
 
 *Combining observed ST4 hourly precipitation to 3 and 24 with
 pcp_combine:*
