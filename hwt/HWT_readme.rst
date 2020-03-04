@@ -381,7 +381,7 @@ The full versions and time each job was run can be found in the files
 crontab.tina and crontab.tina.bigbang.
 
 | **Buxton2**
-~~~~~~~~~~~~~
+_____________
 | *Point Observations, temperature, dew point, and wind speed converted to netCDF:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c pb2nc.conf -c time_valid_hrly.conf
 | 
@@ -391,7 +391,7 @@ crontab.tina and crontab.tina.bigbang.
 | *Surrogate Severe stat_analysis:*
 | /usr/local/Python2.7.11/bin/python run_stat_analysis_surrogate_severe.py
 | 
-| *HREFv2 data*
+| **HREFv2 data**
 | *Combining ensemble member precipitation to 3 hourly and 24 hourly:*
 | /usr/local/Python2.7.11/bin/python run_pcp_href.py
 | 
@@ -402,43 +402,25 @@ crontab.tina and crontab.tina.bigbang.
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c /HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_00.conf
 | 
 *24 hour Precipitation (1200 initialization time) ensemble mean with ensemble_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_12.conf
-
-*3 hour Precipitation ensemble mean with ensemble_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HREFv2_apcp3.conf -c ens_stat.conf -c time_init_ens_apcp3.conf
-
-*Ensemble mean environment point_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HREFv2.conf -c point_stat_ens.conf -c time_valid_hrly.conf
-
-*Ensemble mean environment point_stat, regridded to the CLUE Domain:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HREFv2.conf -c point_stat_ens.conf -c time_valid_hrly.conf -c
-hrrre_regrid.conf
-
-*24 Hour Precipitation ensemble mean grid_stat regridded to the CLUE
-Domain:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HREFv2.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c
-hrrre_regrid.conf -c ens_mean_apcp24.conf
-
-*3 Hour Precipitation ensemble mean grid_stat regridded to the CLUE
-Domain:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c HREFv2.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c
-hrrre_regrid.conf -c ens_mean_apcp3.conf
-
-*HRRRv3 data*
-
-*Reflectivity grid_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_12.conf
+| 
+| *3 hour Precipitation ensemble mean with ensemble_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HREFv2_apcp3.conf -c ens_stat.conf -c time_init_ens_apcp3.conf
+| 
+| *Ensemble mean environment point_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HREFv2.conf -c point_stat_ens.conf -c time_valid_hrly.conf
+| 
+| *Ensemble mean environment point_stat, regridded to the CLUE Domain:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HREFv2.conf -c point_stat_ens.conf -c time_valid_hrly.conf -c hrrre_regrid.conf
+| 
+| *24 Hour Precipitation ensemble mean grid_stat regridded to the CLUE Domain:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HREFv2.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c hrrre_regrid.conf -c ens_mean_apcp24.conf
+| 
+| *3 Hour Precipitation ensemble mean grid_stat regridded to the CLUE Domain:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c HREFv2.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c hrrre_regrid.conf -c ens_mean_apcp3.conf
+| 
+| **HRRRv3 data**
+| *Reflectivity grid_stat:*
 
 /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
 -c HRRRv3.conf -c grid_stat_refc.conf -c time_valid_hrly.conf
