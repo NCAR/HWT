@@ -103,15 +103,10 @@ _________________
 **Configuration Files (alphabetical order):**
 _____________________________________________
 
-This section contains information about the different METplus
-configuration files that were used during HWT 2019.  Not all variables
-in each file are described. Rather, it contains an overview of the ones
-most likely to be changed.
+This section contains information about the different METplus configuration files that were used during HWT 2019.  Not all variables in each file are described. Rather, it contains an overview of the ones most likely to be changed.  
+ Configuration files are located in the examples directory
 
-base_paths.conf:  Configuration file contain paths to the MET
-configuration files, daily domain masks, output verification files,
-current yearly experiment directory, HREF, HRRRe, MRMS observations, and
-prepbufr environment observations
+base_paths.conf:  Configuration file contain paths to the MET configuration files, daily domain masks, output verification files, current yearly experiment directory, HREF, HRRRe, MRMS observations, and prepbufr environment observations
 
 bigbang.conf: A special configuration file for running METplus on
 bigbang2 that contains the locaiton of the ncap2 executable.  It’s
