@@ -52,7 +52,9 @@ mean precipitation file
 configuration file, MET tool configuration file, time configuration
 file, optional regridding file(s), optional ensemble mean precipitation
 file
- 
+
+**Configuration File Categories:**
+__________________________________
 | *Base Configuration files:*
 | bigbang.conf
 | base_paths.conf
