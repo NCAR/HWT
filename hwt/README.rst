@@ -1,3 +1,10 @@
+**Directory Structure**
+=======================
+additional_programs
+cron_jobs
+viewer_config
+examples
+
 **System Description**
 ======================
 
