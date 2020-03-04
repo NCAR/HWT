@@ -46,13 +46,13 @@ system. These will also be discussed at the end of the README.  
 | base_paths.conf, model configuration file, MET tool configuration file,
 time configuration file, optional regridding file(s), optional ensemble
 mean precipitation file
-| 
+ 
 | *Specifically for bigbang2:*
 | bigbang.conf, base_paths.conf , time configuration file, model
 configuration file, MET tool configuration file, time configuration
 file, optional regridding file(s), optional ensemble mean precipitation
 file
-| 
+ 
 | *Base Configuration files:*
 | bigbang.conf
 | base_paths.conf
