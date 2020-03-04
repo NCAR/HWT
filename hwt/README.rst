@@ -311,9 +311,9 @@ These scripts are currently located in
 * *create_met_poly.py:*  Takes a json file containing the sector bounds for the daily domain and converts it to a MET poly file which can then be run through gen_vx_mask to create a masking file for the daily domain.
 * *run_met_surrogate_severe_perc.py:*  Runs the surrogate severe files created by Burkely through grid_stat twice.  The first run creates CSI and bias, and the second computes probability statistics such as ROC and Reliability.  This program also calls create_met_poly.py to create a masking region for the surrogate severe data.
 * *run_pcp_href.py:*  Converts each member of the HREFv2 ensemble from hourly precipitation to 3 hourly and 24 hourly.
-* *Run_pcp_hrrre.py:*  Converts each member of the HRRRe ensemble from hourly precipitation to 3 hourly and 24 hourly.
+* *run_pcp_hrrre.py:*  Converts each member of the HRRRe ensemble from hourly precipitation to 3 hourly and 24 hourly.
 * *run_pcp_obs.py:*  Takes hourly Stage IV precipitation data and accumulates it to compute 3 hourly and 24 hourly data.
-* *Run_stat_analysis_refc_hrrrv3_hrrrv4_nsslfv3.py:*  Takes the output of MET from grid_stat for the HRRRv3 and HRRRv4, and accumulates using stat_analysis, so the data is in a format for Brett to display on the webpage
+* *run_stat_analysis_refc_hrrrv3_hrrrv4_nsslfv3.py:*  Takes the output of MET from grid_stat for the HRRRv3 and HRRRv4, and accumulates using stat_analysis, so the data is in a format for Brett to display on the webpage
 * *run_stat_analysis_surrogate_severe.py:*  Takes the output of MET from grid_stat for the surrogate severe data, and accumulates using stat_analysis, so the data is in a format for Brett to display on the webpage
 
 **Statistics cron jobs in 2019**
