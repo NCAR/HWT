@@ -664,18 +664,7 @@ scorecards are run on this database.  Both of these processes are
 launched from a container. The files associated with creating scorecards
 are located in /raid/efp/se2019/ftp/dtc/metviewer.
 
-viewer_config:
---------------
-
-  Automated scorecard images were created using METviewer running continuously inside a container and having cron entries send command line requests to the container.
-- container_config
-   docker-compose.yml is the yml file used to set up the HWT docker instance
-
-   docker.sh is the shell script calling docker compose and giving an example of the metviewer commands to create the scorecards
-- db_load
-   a series of xml files used to load individual databases
-- scorecards
-   xml files to create different HWT scorecards
+Hank...  How to turn on the container
 
 To load data into the METviewer database, run one of the load shell
 scripts which are described below.  The shell scripts reference
