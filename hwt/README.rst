@@ -301,7 +301,7 @@ was to divide up the load on the machine. Ensemble means could be
 created prior to the arrival of observations, allowing these to be run
 outside the time when the majority of the verification was processing.
 
-**Scripts Outside of METplus**
+**Additional Programs (scripts outside of METplus)**
 ______________________________
 
 These scripts are currently located in
