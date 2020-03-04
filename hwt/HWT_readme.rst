@@ -99,8 +99,8 @@ same grid as another model):*
 mean precipitation):*
 | ens_mean_apcp24.conf
 | ens_mean_apcp3.conf
-|
-| *System configuration files:*
+
+*System configuration files:*
 
 There are a few configuration files that are not specific to HWT, but
 still can be edited.  They are currently set up to run on buxton2 and
