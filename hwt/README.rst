@@ -7,9 +7,7 @@ The system is configured such that multiple configuration files are linked to ge
 
 The order in which configuration files are listed is important for the 3 hourly and 24 hourly accumulated precipitation.  In all other cases, the order is irrelevant. However, to avoid issues, it’s easiest to follow the order of configuration files listed here:
 
-Base Configuration file(s) , model configuration file, MET tool
-configuration file, time configuration file, optional regridding
-file(s), optional ensemble mean precipitation file
+Base Configuration file(s) , model configuration file, MET tool configuration file, time configuration file, optional regridding file(s), optional ensemble mean precipitation file
 
 The different MET tools and configuration files used are described later in the README.  In addition, three scripts were run outside the METplus system. These will also be discussed at the end of the README.  
 
@@ -98,10 +96,10 @@ system functions such as rm, cut, wgrib2, nco tools, etc.
 _________________
 * *ensemble_stat:*  used to create ensemble means for temperature, dew point, wind speed, and precipitation
 * *grid_stat:*  used to create statistics on gridded model and gridded observation data, specifically critical success index, bias, and fraction skill score during HWT 2019
-* pb2nc:  used to convert the point observations of temperature, dew point, and wind speed from prepbufr to netCDF.
-* pcp_combine:  used to combine hourly precipitation files to make 3 and 24 hourly
-* point_stat:  used to create statistics on gridded model and point observation data, specifically RMSE and ME during HWT 2019
-* stat_analysis:  used to combine statistics from multiple days
+* *pb2nc:*  used to convert the point observations of temperature, dew point, and wind speed from prepbufr to netCDF.
+* *pcp_combine:*  used to combine hourly precipitation files to make 3 and 24 hourly
+* *point_stat:*  used to create statistics on gridded model and point observation data, specifically RMSE and ME during HWT 2019
+* *stat_analysis:*  used to combine statistics from multiple days
 
 **Configuration Files (alphabetical order):**
 _____________________________________________
@@ -310,13 +308,13 @@ ______________________________
 These scripts are currently located in
 /home/christina.kalb/python_separates
 
-* create_met_poly.py:  Takes a json file containing the sector bounds for the daily domain and converts it to a MET poly file which can then be run through gen_vx_mask to create a masking file for the daily domain.
-* run_met_surrogate_severe_perc.py:  Runs the surrogate severe files created by Burkely through grid_stat twice.  The first run creates CSI and bias, and the second computes probability statistics such as ROC and Reliability.  This program also calls create_met_poly.py to create a masking region for the surrogate severe data.
-* run_pcp_href.py:  Converts each member of the HREFv2 ensemble from hourly precipitation to 3 hourly and 24 hourly.
-* Run_pcp_hrrre.py:  Converts each member of the HRRRe ensemble from hourly precipitation to 3 hourly and 24 hourly.
-* run_pcp_obs.py:  Takes hourly Stage IV precipitation data and accumulates it to compute 3 hourly and 24 hourly data.
-* Run_stat_analysis_refc_hrrrv3_hrrrv4_nsslfv3.py:  Takes the output of MET from grid_stat for the HRRRv3 and HRRRv4, and accumulates using stat_analysis, so the data is in a format for Brett to display on the webpage
-* run_stat_analysis_surrogate_severe.py:  Takes the output of MET from grid_stat for the surrogate severe data, and accumulates using stat_analysis, so the data is in a format for Brett to display on the webpage
+* *create_met_poly.py:*  Takes a json file containing the sector bounds for the daily domain and converts it to a MET poly file which can then be run through gen_vx_mask to create a masking file for the daily domain.
+* *run_met_surrogate_severe_perc.py:*  Runs the surrogate severe files created by Burkely through grid_stat twice.  The first run creates CSI and bias, and the second computes probability statistics such as ROC and Reliability.  This program also calls create_met_poly.py to create a masking region for the surrogate severe data.
+* *run_pcp_href.py:*  Converts each member of the HREFv2 ensemble from hourly precipitation to 3 hourly and 24 hourly.
+* *Run_pcp_hrrre.py:*  Converts each member of the HRRRe ensemble from hourly precipitation to 3 hourly and 24 hourly.
+* *run_pcp_obs.py:*  Takes hourly Stage IV precipitation data and accumulates it to compute 3 hourly and 24 hourly data.
+* *Run_stat_analysis_refc_hrrrv3_hrrrv4_nsslfv3.py:*  Takes the output of MET from grid_stat for the HRRRv3 and HRRRv4, and accumulates using stat_analysis, so the data is in a format for Brett to display on the webpage
+* *run_stat_analysis_surrogate_severe.py:*  Takes the output of MET from grid_stat for the surrogate severe data, and accumulates using stat_analysis, so the data is in a format for Brett to display on the webpage
 
 **Statistics cron jobs in 2019**
 ================================
