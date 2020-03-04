@@ -459,7 +459,7 @@ ___________
 
 Bigbang2
 ____________
-*Combining observed ST4 hourly precipitation to 3 and 24 with pcp_combine:*
+| *Combining observed ST4 hourly precipitation to 3 and 24 with pcp_combine:*
 | /bin/python run_pcp_obs.py
 | 
 | *Reflectivity stat_analysis:*
@@ -469,90 +469,52 @@ ____________
 | *Ensemble mean temperature, dew point, and wind speed with ensemble_stat:*
 | /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe_ens.conf -c ens_stat.conf -c time_init_ens.conf 
 | 
-*Combining ensemble member precipitation to 3 hourly and 24 hourly:*
-
-/bin/python run_pcp_hrrre.py
-
-*24 hour Precipitation (0000 initialization time) ensemble mean with
-ensemble_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRe_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_00.conf
-
-*24 hour Precipitation (1200 initialization time) ensemble mean with
-ensemble_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRe_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_12.conf
-
-*3 hour Precipitation ensemble mean with ensemble_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRe_apcp3.conf -c ens_stat.conf -c time_init_ens_apcp3.conf
-
-*Ensemble mean environment point_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRe.conf -c point_stat_ens.conf -c time_valid_hrly.conf
-
-24 *Hour Precipitation ensemble mean grid_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRe.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c
-ens_mean_apcp24.conf
-
-*3 Hour Precipitation ensemble mean grid_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRe.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c
-ens_mean_apcp3.conf
-
-*HRRRv4 data*
-
-*Reflectivity grid_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-${CPATH}/HRRRv4.conf grid_stat_refc.conf -c time_valid_hrly.conf
-
-*Environment point_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRv4.conf -c point_stat.conf -c time_valid_hrly.conf
-
-*Reflectivity grid_stat regridded to the CLUE grid:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRv4.conf -c grid_stat_refc.conf -c time_valid_hrly.conf -c
-nsslfv3_regrid.conf
-
-*Environment point_stat regridded to the CLUE grid:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRv4.conf -c point_stat.conf -c time_valid_hrly.conf -c
-nsslfv3_regrid.conf
-
-*24 hour precipitation grid_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRv4.conf -c pcp_combine_grid_stat.conf -c time_valid_24hrly.conf
-
-*3 hour precipitation grid_stat:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRv4.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
-
-*24 hour precipitation grid_stat regridded to the CLUE grid:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRv4.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c
-nsslfv3_regrid.conf
-
-*3 hour precipitation grid_stat regridded to the CLUE grid:*
-
-/bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c
-HRRRv4.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c
-nsslfv3_regrid.conf
-
+| *Combining ensemble member precipitation to 3 hourly and 24 hourly:*
+| /bin/python run_pcp_hrrre.py
+| 
+| *24 hour Precipitation (0000 initialization time) ensemble mean with ensemble_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_00.conf
+| 
+| *24 hour Precipitation (1200 initialization time) ensemble mean with ensemble_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_12.conf
+| 
+| *3 hour Precipitation ensemble mean with ensemble_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe_apcp3.conf -c ens_stat.conf -c time_init_ens_apcp3.conf
+| 
+| *Ensemble mean environment point_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe.conf -c point_stat_ens.conf -c time_valid_hrly.conf
+| 
+| *24 Hour Precipitation ensemble mean grid_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c ens_mean_apcp24.conf
+| 
+| *3 Hour Precipitation ensemble mean grid_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRe.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c ens_mean_apcp3.conf
+| 
+| **HRRRv4 data**
+| *Reflectivity grid_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf grid_stat_refc.conf -c time_valid_hrly.conf
+| 
+| *Environment point_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf -c point_stat.conf -c time_valid_hrly.conf
+| 
+| *Reflectivity grid_stat regridded to the CLUE grid:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf -c grid_stat_refc.conf -c time_valid_hrly.conf -c nsslfv3_regrid.conf
+| 
+| *Environment point_stat regridded to the CLUE grid:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf -c point_stat.conf -c time_valid_hrly.conf -c nsslfv3_regrid.conf
+| 
+| *24 hour precipitation grid_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf -c pcp_combine_grid_stat.conf -c time_valid_24hrly.conf
+| 
+| *3 hour precipitation grid_stat:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
+| 
+| *24 hour precipitation grid_stat regridded to the CLUE grid:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf -c grid_stat_pcp.conf -c time_valid_24hrly.conf -c nsslfv3_regrid.conf
+| 
+| *3 hour precipitation grid_stat regridded to the CLUE grid:*
+| /bin/python master_metplus.py -c bigbang.conf -c base_paths.conf -c HRRRv4.conf -c grid_stat_pcp.conf -c time_valid_3hrly.conf -c nsslfv3_regrid.conf
+ 
 **Creating Scorecards**
 =======================
 
@@ -572,39 +534,24 @@ that contains the models and variables to display on the scorecard.  The
 color and symbol settings, as well as significance thresholds are
 located in the xml file, thresh_sigdiff.xml.
 
-*Database Loading Files:*
-
-add_mv_hwt_2019.sh:  Add the HRRRv3 and HRRRv4 data to the database
-
-load_mv_hwt_2019.sh: reload all data from all models
-
-*Model Scorecard xml files:*
-
-scorecard_cam_2019_hrrrv3_hrrrv4.xml:  HRRRv3 versus HRRRv4
-
-scorecard_cam_2019_nsslfv3_hrrrv3_cluegrid.xml:  NSSL-FV3 versus HRRRv3
-
-scorecard_cam_2019_nsslfv3_hrrrv4_cluegrid.xml:  NSSL-FV3 versus HRRRv4
-
-scorecard_cam_2019_href_hrrre_mean.xml:  HREFv2 versus HRRRe ensemble
-mean
-
-*Surrogate Severe Scorecard xml files:*
-
-scorecard_cam_2019_ss_hrrrv3_hrrrv4.xml:  HRRRv3 versus HRRRv4
-
-scorecard_cam_2019_ss_nsslfv3_hrrrv3_cluegrid.xml:  NSSL-FV3 versus
-HRRRv3
-
-scorecard_cam_2019_ss_nsslfv3_hrrrv4_cluegrid.xml:  NSSL-FV3 versus
-HRRRv4
-
-scorecard_cam_2019_ss_href_hrrre_cluegrid.xml:  HREFv2 versus HRRRe
-
-*Other xml files*
-
-thresh_sigdiff.xml:  Contains the color and symbol settings, as well as
-significance thresholds
+| *Database Loading Files:*
+| add_mv_hwt_2019.sh:  Add the HRRRv3 and HRRRv4 data to the database
+| load_mv_hwt_2019.sh: reload all data from all models
+| 
+| *Model Scorecard xml files:*
+| scorecard_cam_2019_hrrrv3_hrrrv4.xml:  HRRRv3 versus HRRRv4
+| scorecard_cam_2019_nsslfv3_hrrrv3_cluegrid.xml:  NSSL-FV3 versus HRRRv3
+| scorecard_cam_2019_nsslfv3_hrrrv4_cluegrid.xml:  NSSL-FV3 versus HRRRv4
+| scorecard_cam_2019_href_hrrre_mean.xml:  HREFv2 versus HRRRe ensemble mean
+| 
+| *Surrogate Severe Scorecard xml files:*
+| scorecard_cam_2019_ss_hrrrv3_hrrrv4.xml:  HRRRv3 versus HRRRv4
+| scorecard_cam_2019_ss_nsslfv3_hrrrv3_cluegrid.xml:  NSSL-FV3 versus HRRRv3
+| scorecard_cam_2019_ss_nsslfv3_hrrrv4_cluegrid.xml:  NSSL-FV3 versus HRRRv4
+| scorecard_cam_2019_ss_href_hrrre_cluegrid.xml:  HREFv2 versus HRRRe
+| 
+| *Other xml files*
+| thresh_sigdiff.xml:  Contains the color and symbol settings, as well as significance thresholds
 
 **Scorecard cron jobs in 2019**
 ===============================
