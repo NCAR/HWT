@@ -77,9 +77,8 @@ __________________________________
 | *System configuration files:*
 | There are a few configuration files that are not specific to HWT, but still can be edited.  They are currently set up to run on buxton2 and bigbang2. However, they may need to be edited if METplus is run from a different machine.  They are listed here, with the relative path. 
 
-METplus/parm/metplus_config/metplus_logging.conf:  Configuration file containing information about the format and labeling of log files from METplus, and how much information each log file contains
-
-METplus/parm/metplus_config/metplus_system.conf:  Configuration file containing system information including the location where MET tools are installed, the logging and temporary directories, and the location of system functions such as rm, cut, wgrib2, nco tools, etc.
+1. METplus/parm/metplus_config/metplus_logging.conf:  Configuration file containing information about the format and labeling of log files from METplus, and how much information each log file contains
+2. METplus/parm/metplus_config/metplus_system.conf:  Configuration file containing system information including the location where MET tools are installed, the logging and temporary directories, and the location of system functions such as rm, cut, wgrib2, nco tools, etc.
 
 **Description of MET Tools, Configuration Files and separate scripts**
 ======================================================================
