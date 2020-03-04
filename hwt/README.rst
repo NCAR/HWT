@@ -1,8 +1,9 @@
 **Directory Structure**
 =======================
-* additional_programs
-* examples
-* cron_jobs
+* additional_programs: Contains programs which were run outside of the METplus structure
+* cron_jobs:  Contains the crontab files that were used to generate statistics
+* examples:  Contains .conf files used to run statistics in METplus
+* met_config
 * viewer_config
 
 **System Description**
