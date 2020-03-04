@@ -322,10 +322,12 @@ These scripts are currently located in
 These are shortened examples; the full paths are omitted for clarity. The full versions and time each job was run can be found in the files crontab.tina and crontab.tina.bigbang.
 
 Buxton2
-___________
+_______
+| **Observations**
 | *Point Observations, temperature, dew point, and wind speed converted to netCDF:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c pb2nc.conf -c time_valid_hrly.conf
 | 
+| **Surrogate Severe**
 | *Surrogate Severe grid_stat:*
 | /usr/local/Python2.7.11/bin/python run_met_surrogate_severe_perc.py
 | 
@@ -399,7 +401,8 @@ ___________
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c NSSLfv3.conf -c pcp_combine_grid_stat.conf -c time_valid_3hrly.conf
 
 Bigbang2
-____________
+________
+| **Observations**
 | *Combining observed ST4 hourly precipitation to 3 and 24 with pcp_combine:*
 | /bin/python run_pcp_obs.py
 | 
