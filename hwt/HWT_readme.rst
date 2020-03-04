@@ -168,6 +168,7 @@ observation data, specifically RMSE and ME during HWT 2019
 stat_analysis:  used to combine statistics from multiple days
 
 **Configuration Files (alphabetical order):**
+---------------------------------------------
 
 This section contains information about the different METplus
 configuration files that were used during HWT 2019.  Not all variables
