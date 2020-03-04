@@ -4,7 +4,7 @@
 * cron_jobs:  Contains the crontab files that were used to generate statistics
 * examples:  Contains .conf files used to run statistics in METplus
 * met_config
-* viewer_config
+* viewer_config:  Contains the files used to start the container and run scorecards, container_config, db_load, scorecards
 
 **System Description**
 ======================
