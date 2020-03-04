@@ -1,9 +1,9 @@
 **Directory Structure**
 =======================
-additional_programs
-cron_jobs
-viewer_config
-examples
+* additional_programs
+* examples
+* cron_jobs
+* viewer_config
 
 **System Description**
 ======================
