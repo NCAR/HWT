@@ -495,7 +495,6 @@ The full versions and time each job was run can be found in the files
 
 | **Run Tues - Saturday at 11am**
 | *Add HRRRv3 and HRRRv4* *to the database*
-|
 | /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "/raid/efp/se2019/ftp/dtc/metviewer/scripts/add_mv_hwt_2019.sh"
 | 
 | *Run HRRRv3/HRRRv4 Surrogate Severe Scorecard*
