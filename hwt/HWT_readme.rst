@@ -380,9 +380,9 @@ These are shortened examples; the full paths are omitted for clarity. 
 The full versions and time each job was run can be found in the files
 crontab.tina and crontab.tina.bigbang.
 
-**Buxton2**
-| *Point Observations, temperature, dew point, and wind speed converted to
-netCDF:*
+| **Buxton2**
+
+| *Point Observations, temperature, dew point, and wind speed converted to netCDF:*
 | /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c pb2nc.conf -c time_valid_hrly.conf
 | 
 | *Surrogate Severe grid_stat:*
@@ -394,21 +394,14 @@ netCDF:*
 | *HREFv2 data*
 | *Combining ensemble member precipitation to 3 hourly and 24 hourly:*
 | /usr/local/Python2.7.11/bin/python run_pcp_href.py
-
-*Ensemble mean temperature, dew point, and wind speed with
-ensemble_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c time_init_ens.conf -c HREFv2_ens.conf -c ens_stat.conf
-
-*24 hour Precipitation (0000 initialization time) ensemble mean with
-ensemble_stat:*
-
-/usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
--c /HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_00.conf
-
-*24 hour Precipitation (1200 initialization time) ensemble mean with
-ensemble_stat:*
+| 
+| *Ensemble mean temperature, dew point, and wind speed with ensemble_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c time_init_ens.conf -c HREFv2_ens.conf -c ens_stat.conf
+| 
+| *24 hour Precipitation (0000 initialization time) ensemble mean with ensemble_stat:*
+| /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf -c /HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_00.conf
+| 
+*24 hour Precipitation (1200 initialization time) ensemble mean with ensemble_stat:*
 
 /usr/local/Python2.7.11/bin/python master_metplus.py -c base_paths.conf
 -c HREFv2_apcp24.conf -c ens_stat.conf -c time_init_ens_apcp24_12.conf
