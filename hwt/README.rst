@@ -3,7 +3,7 @@
 * additional_programs: Contains programs which were run outside of the METplus structure
 * cron_jobs:  Contains the crontab files that were used to generate statistics
 * examples:  Contains .conf files used to run statistics in METplus
-* met_config
+* met_config: Contains configuration files for the different MET tools used
 * viewer_config:  Contains the files used to start the container and run scorecards, container_config, db_load, scorecards
 
 **System Description**
