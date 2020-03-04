@@ -96,8 +96,8 @@ system functions such as rm, cut, wgrib2, nco tools, etc.
 
 **MET programs:**
 _________________
-* ensemble_stat:  used to create ensemble means for temperature, dew point, wind speed, and precipitation
-* grid_stat:  used to create statistics on gridded model and gridded observation data, specifically critical success index, bias, and fraction skill score during HWT 2019
+* *ensemble_stat:*  used to create ensemble means for temperature, dew point, wind speed, and precipitation
+* *grid_stat:*  used to create statistics on gridded model and gridded observation data, specifically critical success index, bias, and fraction skill score during HWT 2019
 * pb2nc:  used to convert the point observations of temperature, dew point, and wind speed from prepbufr to netCDF.
 * pcp_combine:  used to combine hourly precipitation files to make 3 and 24 hourly
 * point_stat:  used to create statistics on gridded model and point observation data, specifically RMSE and ME during HWT 2019
