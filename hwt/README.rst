@@ -45,7 +45,8 @@ file
 
 **Configuration File Categories:**
 __________________________________
-| *Base Configuration files:*
+*Base Configuration Files:*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | bigbang.conf
 | base_paths.conf
 | 
