@@ -90,13 +90,11 @@ __________________________________
 | time_valid_3hrly.conf
 | time_valid_hrly.conf
 | 
-| *Regridding files (only needed if you want to put the model data on the
-same grid as another model):*
+| *Regridding files (only needed if you want to put the model data on the same grid as another model):*
 | hrrre_regrid.conf
 | nsslfv3_regrid.conf
 | 
-| *Ensemble Mean Precipitation Files (only needed when running ensemble
-mean precipitation):*
+| *Ensemble Mean Precipitation Files (only needed when running ensemble mean precipitation):*
 | ens_mean_apcp24.conf
 | ens_mean_apcp3.conf
 
