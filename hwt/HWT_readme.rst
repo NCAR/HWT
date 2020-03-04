@@ -518,21 +518,11 @@ ____________
 **Creating Scorecards**
 =======================
 
-Scorecards are created by running METviewer in a container.  The output
-from MET tools is first added to a METviewer database, and then
-scorecards are run on this database.  Both of these processes are
-launched from a container. The files associated with creating scorecards
-are located in /raid/efp/se2019/ftp/dtc/metviewer.
+Scorecards are created by running METviewer in a container.  The output from MET tools is first added to a METviewer database, and then scorecards are run on this database.  Both of these processes are launched from a container. The files associated with creating scorecards are located in /raid/efp/se2019/ftp/dtc/metviewer.
 
-Hank...  How to turn on the container
+Automated scorecard images were created using METviewer running continuously inside a container and having cron entries send command line requests to the container.  docker-compose.yml is the yml file used to set up the HWT docker instance and docker.sh is the shell script calling docker compose and giving an example of the metviewer commands to create the scorecards
 
-To load data into the METviewer database, run one of the load shell
-scripts which are described below.  The shell scripts reference
-parameter files that list the data to be loaded into the database.
-Scorecards are run by calling mv_scorecard.sh followed by an xml file
-that contains the models and variables to display on the scorecard.  The
-color and symbol settings, as well as significance thresholds are
-located in the xml file, thresh_sigdiff.xml.
+To load data into the METviewer database, run one of the load shell scripts which are described below.  The shell scripts reference parameter files that list the data to be loaded into the database. Scorecards are run by calling mv_scorecard.sh followed by an xml file that contains the models and variables to display on the scorecard.  The color and symbol settings, as well as significance thresholds are located in the xml file, thresh_sigdiff.xml.
 
 | *Database Loading Files:*
 | add_mv_hwt_2019.sh:  Add the HRRRv3 and HRRRv4 data to the database
