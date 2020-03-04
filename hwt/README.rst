@@ -4,7 +4,7 @@
 * cron_jobs:  Contains the crontab files that were used to generate statistics
 * examples:  Contains .conf files used to run statistics in METplus
 * met_config: Contains configuration files for the different MET tools used
-* viewer_config:  Contains the files used to start the container and run scorecards, container_config, db_load, scorecards
+* viewer_config:  Contains the files used to start the container and run scorecards including the directories container_config, db_load, and scorecards
 
 **System Description**
 ======================
@@ -15,7 +15,7 @@ The system is configured such that multiple configuration files are linked to ge
 
 The order in which configuration files are listed is important for the 3 hourly and 24 hourly accumulated precipitation.  In all other cases, the order is irrelevant. However, to avoid issues, it’s easiest to follow the order of configuration files listed here:
 
-Base Configuration file(s) , model configuration file, MET tool configuration file, time configuration file, optional regridding file(s), optional ensemble mean precipitation file
+ Base Configuration file(s) , model configuration file, MET tool configuration file, time configuration file, optional regridding file(s), optional ensemble mean precipitation file
 
 The different MET tools and configuration files used are described later in the README.  In addition, three scripts were run outside the METplus system. These will also be discussed at the end of the README.  
 
