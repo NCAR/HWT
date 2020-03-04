@@ -77,7 +77,7 @@ file
 | pb2nc.conf
 | pcp_combine_grid_stat.conf
 | point_stat.conf
-|point_stat_ens.conf
+| point_stat_ens.conf
 | 
 | *Time configuration files:*
 | time_init_ens_apcp24_00.conf
