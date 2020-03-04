@@ -54,48 +54,29 @@ file, optional regridding file(s), optional ensemble mean precipitation
 file
 
 *Base Configuration files:*
----------------------------
 bigbang.conf
 base_paths.conf
 
 *Model Configuration files:*
-
 HREFv2_apcp3.conf
-
 HREFv2_apcp24.conf
-
 HREFv2_ens.conf
-
 HREFv2.conf
-
 HRRRe_apcp3.conf
-
 HRRRe_apcp24.conf
-
 HRRRe_ens.conf
-
 HRRRe.conf
-
 HRRRv3.conf
-
 HRRRv4.conf
-
 NSSLFV3.conf
 
 *MET tool configuration files:*
-
 ens_stat.conf
-
 grid_stat_pcp.conf
-
 grid_stat_refc.conf
-
 pb2nc.conf
-
 pcp_combine_grid_stat.conf
-
 point_stat.conf
-
 point_stat_ens.conf
 
 *Time configuration files:*
