@@ -11,7 +11,7 @@ Base Configuration file(s) , model configuration file, MET tool configuration fi
 
 The different MET tools and configuration files used are described later in the README.  In addition, three scripts were run outside the METplus system. These will also be discussed at the end of the README.  
 
-**How to Run METplus**
+**How to Run METplus for HWT**
 ======================
 
 1. Edit the system configuration files
