@@ -555,39 +555,21 @@ The full versions and time each job was run can be found in the files
 | **Run Friday at 11am**
 | *Reload all the data*
 |  /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "/raid/efp/se2019/ftp/dtc/metviewer/scripts/load_mv_hwt_2019.sh"
-
-*Run NSSL-FV3 versus HRRRv3 Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_nsslfv3_hrrrv3_cluegrid.xml"
-
-*Run NSSL-FV3 versus HRRRv3 Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_nsslfv3_hrrrv4_cluegrid.xml"
-
-*Run NSSL-FV3 versus HRRRv3 Surrogate Severe Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_nsslfv3_hrrrv3_cluegrid.xml"
-
-*Run NSSL-FV3 versus HRRRv3 Surrogate Severe Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_nsslfv3_hrrrv4_cluegrid.xml"
-
-*Run HREFv2 versus HRRRe Ensemble Mean Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_href_hrrrre_mean.xml"
-
-*Run HREFv2 versus HRRRe Surrogate Severe Scorecard*
-
-/bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c
-"bin/mv_scorecard.sh
-/raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_href_hrrrre_cluegrid.xml"
+| 
+| *Run NSSL-FV3 versus HRRRv3 Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_nsslfv3_hrrrv3_cluegrid.xml"
+| 
+| *Run NSSL-FV3 versus HRRRv3 Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_nsslfv3_hrrrv4_cluegrid.xml"
+| 
+| *Run NSSL-FV3 versus HRRRv3 Surrogate Severe Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_nsslfv3_hrrrv3_cluegrid.xml"
+| 
+| *Run NSSL-FV3 versus HRRRv3 Surrogate Severe Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_nsslfv3_hrrrv4_cluegrid.xml"
+| 
+| *Run HREFv2 versus HRRRe Ensemble Mean Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_href_hrrrre_mean.xml"
+| 
+| *Run HREFv2 versus HRRRe Surrogate Severe Scorecard*
+| /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_href_hrrrre_cluegrid.xml"
