@@ -1,4 +1,4 @@
-**GitHub Directory Structure**
+**Directory Structure**
 =======================
 * additional_programs: Contains programs which were run outside of the METplus structure
 * cron_jobs:  Contains the crontab files that were used to generate statistics
