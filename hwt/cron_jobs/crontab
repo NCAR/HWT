@@ -1,0 +1,23 @@
+SHELL=/bin/bash
+BASH_ENV="~/.bashrc"
+
+
+
+
+*/5 * * * * /bin/touch /home/hank.fisher/logs/test > /home/hank.fisher/cron/cron`date +\%Y\%m\%d\%M`.out
+#5 17 * * 1,2,3,4,5 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_hrrr3_hrrr4.xml"
+
+#### Tues through Saturday add the HRRR data and run the scorecards
+10 11 * * 2,3,5 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "/raid/efp/se2019/ftp/dtc/metviewer/scripts/add_mv_hwt_2019.sh" >& /home/hank.fisher/logs/add_mv.log
+15 11 * * 2,3,4,5,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_href_hrrre.xml" >& /home/hank.fisher/logs/href_hrrre.log
+16 11 * * 2,3,4,5,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_hrrrv3_hrrrv4.xml" >& /home/hank.fisher/logs/ss_hrrrv3_hrrrv4.log
+17 11 * * 2,3,4,5,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_href_hrrre_mean.xml" >& /home/hank.fisher/logs/href_hrrre_mean.log
+20 11 * * 2,3,4,5,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_hrrrv3_hrrrv4.xml" >& /home/hank.fisher/logs/hrrrv3_hrrrv4.log
+
+### Sat(TBD) reload ALL the data and run the cluegrid scorecards
+10 11 * * 4,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "/raid/efp/se2019/ftp/dtc/metviewer/scripts/load_mv_hwt_2019.sh" >& /home/hank.fisher/logs/load_all_mv.log
+18 11 * * 4,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_nsslfv3_hrrrv3_cluegrid.xml" >& /home/hank.fisher/logs/nsslfv3_hrrrv3.log
+19 11 * * 4,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_nsslfv3_hrrrv4_cluegrid.xml" >& /home/hank.fisher/logs/nsslfv3_hrrrv4.log
+20 11 * * 4,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_nsslfv3_hrrrv3_cluegrid.xml" >& /home/hank.fisher/logs/ss_nsslfv3_hrrrv3.log
+21 11 * * 4,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_nsslfv3_hrrrv4_cluegrid.xml" >& /home/hank.fisher/logs/ss_nsslfv3_hrrrv4.log
+21 11 * * 4,6 /bin/docker exec -e JAVA=/usr/bin/java -d metviewer_1 sh -c "bin/mv_scorecard.sh /raid/efp/se2019/ftp/dtc/metviewer/xml/scorecard_cam_2019_ss_href_hrrrre_cluegrid.xml" >& /home/hank.fisher/logs/ss_href_hrrre.log

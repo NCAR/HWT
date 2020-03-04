@@ -1,0 +1,74 @@
+MAILTO=""
+
+SHELL=/bin/bash
+BASH_ENV="~/.bashrc"
+CPATH=/home/christina.kalb/METplus/parm/use_cases/hwt
+MPATH=/home/christina.kalb/METplus/ush
+
+## Subdomain Mask
+#0 13 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python /home/christina.kalb/python_separates/create_met_poly.py > /home/christina.kalb/logs/mask_`date +\%Y\%m\%d\%H`.out 2>/home/christina.kalb/logs/mask_error_`date +\%Y\%m\%d\%H`.out
+#
+#
+## Observations
+#30 8 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/pb2nc.conf -c ${CPATH}/time_valid_hrly.conf > /home/christina.kalb/logs/obs_envir_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/obs_envir_error_`date +\%Y\%m\%d\%H`.out
+#
+#
+## Surrogate Severe
+#5 11 * * 2-6 cd /home/christina.kalb/python_separates;/usr/local/Python2.7.11/bin/python run_met_surrogate_severe_perc.py >  /home/christina.kalb/logs/surrogate_severe_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/surrogate_severe_error_`date +\%Y\%m\%d\%H`.out 
+#
+#
+## Stat Analysis surrogate severe
+#0 12 * * 2-6 cd /home/christina.kalb/python_separates;/usr/local/Python2.7.11/bin/python run_stat_analysis_surrogate_severe.py > /home/christina.kalb/logs/stat_analysis_ss_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/stat_analysis_ss_error_`date +\%Y\%m\%d\%H`.out
+#
+#
+## Thompson Hail
+#17 9 * * 2-6 cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRe.conf -c ${CPATH}/mode_hail.conf -c ${CPATH}/time_valid_hrly.conf; cd /home/christina.kalb/python_separates; /home/brett.roberts/anaconda2/bin/python analyze_mode_perfdiag.py `date -d yesterday +\%Y\%m\%d` > /home/christina.kalb/logs/hail_thomp_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hail_thomp_error_`date +\%Y\%m\%d\%H`.out
+#
+#
+## HREFv2
+## Ensembles
+#0 18 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/time_init_ens.conf -c ${CPATH}/HREFv2_ens.conf -c ${CPATH}/ens_stat.conf > /home/christina.kalb/logs/hrefv2_ens_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_ens_error_`date +\%Y\%m\%d\%H`.out
+## APCP pcp_combine
+#0 17 * * * cd  /home/christina.kalb/python_separates;/usr/local/Python2.7.11/bin/python run_pcp_href.py > /home/christina.kalb/logs/hrrre_ens_apcp_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrre_ens_apcp_error_`date +\%Y\%m\%d\%H`.out
+## APCP ensemble means
+#0 23 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HREFv2s_apcp24.conf -c ${CPATH}/ens_stat.conf -c ${CPATH}/time_init_ens_apcp24_00.conf > /home/christina.kalb/logs/hrefv2_ens_apcp24_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_ens_apcp24_error_`date +\%Y\%m\%d\%H`.out
+#3 23 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HREFv2_apcp24.conf -c ${CPATH}/ens_stat.conf -c ${CPATH}/time_init_ens_apcp24_12.conf > /home/christina.kalb/logs/hrefv2_ens_apcp24_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_ens_apcp24_error_`date +\%Y\%m\%d\%H`.out
+#10 23 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HREFv2_apcp3.conf -c ${CPATH}/ens_stat.conf -c ${CPATH}/time_init_ens_apcp3.conf > /home/christina.kalb/logs/hrefv2_ens_apcp3_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_ens_apcp3_error_`date +\%Y\%m\%d\%H`.out
+## ENVIR
+#0 10 * * 2-6 cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HREFv2.conf -c ${CPATH}/point_stat_ens.conf -c ${CPATH}/time_valid_hrly.conf > /home/christina.kalb/logs/hrefv2_enivr_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_envir_error_`date +\%Y\%m\%d\%H`.out
+## ENVIR CLUE Domain
+#3 10 * * 2-6 cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HREFv2.conf -c ${CPATH}/point_stat_ens.conf -c ${CPATH}/time_valid_hrly.conf -c ${CPATH}/hrrre_regrid.conf > /home/christina.kalb/logs/hrefv2_enivr_rg_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_envir_rg_error_`date +\%Y\%m\%d\%H`.out
+## APCP 24 CLUE Domain
+#20 23 * * 2-6 cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HREFv2.conf -c ${CPATH}/grid_stat_pcp.conf -c ${CPATH}/pcprg_24.conf -c ${CPATH}/hrrre_regrid.conf -c ${CPATH}/ens_mean_apcp24.conf > /home/christina.kalb/logs/hrefv2_apcp24_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_apcp24_error_`date +\%Y\%m\%d\%H`.out
+## APCP 3 CLUE Domain
+#30 23 * * 2-6 cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HREFv2.conf -c ${CPATH}/grid_stat_pcp.conf -c ${CPATH}/pcprg_3.conf -c ${CPATH}/hrrre_regrid.conf -c ${CPATH}/ens_mean_apcp3.conf > /home/christina.kalb/logs/hrefv2_apcp3_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrefv2_apcp3_error_`date +\%Y\%m\%d\%H`.out
+#
+#
+# HRRRv3
+## REFC
+#0 9 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/grid_stat_refc.conf -c ${CPATH}/time_valid_hrly.conf > /home/christina.kalb/logs/hrrrv3_refc_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_refc_error_`date +\%Y\%m\%d\%H`.out
+## ENVIR
+#10 9 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/point_stat.conf -c ${CPATH}/time_valid_hrly.conf > /home/christina.kalb/logs/hrrrv3_envir_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_envir_error_`date +\%Y\%m\%d\%H`.out
+## REFC Cluegrid
+#40 9 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/grid_stat_refc.conf -c ${CPATH}/time_valid_hrly.conf -c ${CPATH}/nsslfv3_regrid.conf > /home/christina.kalb/logs/hrrrv3_cluegrid_refc_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_cluegrid_refc_error_`date +\%Y\%m\%d\%H`.out
+## ENVIR Cluegrid
+#50 9 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/point_stat.conf -c ${CPATH}/time_valid_hrly.conf -c ${CPATH}/nsslfv3_regrid.conf > /home/christina.kalb/logs/hrrrv3_cluegrid_envir_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_cluegrid_envir_error_`date +\%Y\%m\%d\%H`.out
+## APCP24
+#0 22 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/pcp_combine_grid_stat.conf -c ${CPATH}/time_valid_24hrly.conf > /home/christina.kalb/logs/hrrrv3_apcp24_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_apcp24_error_`date +\%Y\%m\%d\%H`.out
+## APCP03
+#10 22 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/pcp_combine_grid_stat.conf -c ${CPATH}/time_valid_3hrly.conf > /home/christina.kalb/logs/hrrrv3_apcp03_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_apcp03_error_`date +\%Y\%m\%d\%H`.out
+## APCP24 Cluegrid
+#40 23 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/grid_stat_pcp.conf -c ${CPATH}/time_valid_24hrly.conf -c ${CPATH}/nsslfv3_regrid.conf > /home/christina.kalb/logs/hrrrv3_cluegrid_apcp24_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_cluegrid_apcp24_error_`date +\%Y\%m\%d\%H`.out
+## APCP03 Cluegrid
+#50 23 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/HRRRv3.conf -c ${CPATH}/grid_stat_pcp.conf -c ${CPATH}/time_valid_3hrly.conf -c ${CPATH}/nsslfv3_regrid.conf > /home/christina.kalb/logs/hrrrv3_cluegrid_apcp03_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/hrrrv3_cluerid_apcp03_error_`date +\%Y\%m\%d\%H`.out
+#
+#
+## NSSL-FV3
+## REFC
+#20 9 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/NSSLfv3.conf -c ${CPATH}/grid_stat_refc.conf -c ${CPATH}/time_valid_hrly.conf > /home/christina.kalb/logs/nsslfv3_refc_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/nsslfv3_refc_error_`date +\%Y\%m\%d\%H`.out
+## ENVIR
+#30 9 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/NSSLfv3.conf -c ${CPATH}/point_stat.conf -c ${CPATH}/time_valid_hrly.conf > /home/christina.kalb/logs/nsslfv3_envir_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/nsslfv3_envir_error_`date +\%Y\%m\%d\%H`.out
+## APCP24
+#20 22 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/NSSLfv3.conf -c ${CPATH}/pcp_combine_grid_stat.conf -c ${CPATH}/time_valid_24hrly.conf > /home/christina.kalb/logs/nsslfv3_apcp24_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/nsslfv3_apcp24_error_`date +\%Y\%m\%d\%H`.out
+## APCP03
+#30 22 * * * cd ${MPATH};/usr/local/Python2.7.11/bin/python ${MPATH}/master_metplus.py -c ${CPATH}/base_paths.conf -c ${CPATH}/NSSLfv3.conf -c ${CPATH}/pcp_combine_grid_stat.conf -c ${CPATH}/time_valid_3hrly.conf > /home/christina.kalb/logs/nsslfv3_apcp03_`date +\%Y\%m\%d\%H`.out 2> /home/christina.kalb/logs/nsslfv3_apcp03_error_`date +\%Y\%m\%d\%H`.out
